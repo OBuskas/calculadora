@@ -13,34 +13,35 @@
 
   <style type="text/tailwindcss">
     @theme {
-       --text: #EBEBEB;
-       --text-secondary: #6B6B6B;
-       --primary: #462878;
-       --background: #2D2A37;
- 
-       --gradient: 180deg, 
-         rgba(0, 0, 0, 0.05) 0%, 
-         rgba(255, 255, 255, 0.05) 100%;
- 
-       --gradient-hover: 180deg, 
-         rgba(0, 0, 0, 0.1) 0%, 
-         rgba(255, 255, 255, 0.1) 100%;
- 
-       --shadow: 0px 11px 7px 0px rgba(0, 0, 0, 0.01), 
-         0px 7px 7px 0px rgba(0, 0, 0, 0.04), 
-         0px 4px 6px 0px rgba(0, 0, 0, 0.10), 
-         0px 2px 4px 0px rgba(0, 0, 0, 0.26), 
-         0px 0px 2px 0px rgba(0, 0, 0, 0.29), 
-         0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
- 
-       --font-sans: 'Rubik', sans-serif;
-      }
-   </style>
+      --text: #EBEBEB;
+      --text-secondary: #6B6B6B;
+      --primary: #462878;
+      --background: #2D2A37;
+
+      --gradient: 180deg, 
+        rgba(0, 0, 0, 0.05) 0%, 
+        rgba(255, 255, 255, 0.05) 100%;
+
+      --gradient-hover: 180deg, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        rgba(255, 255, 255, 0.1) 100%;
+
+      --shadow: 0px 11px 7px 0px rgba(0, 0, 0, 0.01), 
+        0px 7px 7px 0px rgba(0, 0, 0, 0.04), 
+        0px 4px 6px 0px rgba(0, 0, 0, 0.10), 
+        0px 2px 4px 0px rgba(0, 0, 0, 0.26), 
+        0px 0px 2px 0px rgba(0, 0, 0, 0.29), 
+        0px 2px 3px 0px rgba(255, 255, 255, 0.06) inset;
+
+      --font-sans: 'Rubik', sans-serif;
+    }
+  </style>
 </head>
 
-<body class="min-h-screen bg-linear-[180deg,_#807ECE_0%,_#807ECE_100%] text-(--text) font-(--font-sans)">
+<body class="bg-linear-[180deg,_#807ECE_0%,_#807ECE_100%] min-h-screen text-(--text) font-(--font-sans)">
   <div id="root"></div>
 
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -57,7 +58,7 @@
       as = 'span', 
       variant = 'default', 
       className, 
-      Children, 
+      children, 
       ...props 
     }) {
       return React.createElement(
@@ -98,8 +99,8 @@
       </Text>
     }
 
-    function Card({ children, calssName, ...props }) {
-      return (
+    function Card({ children, className, ...props }) {
+      return ( 
         <div
           className={` bg-(--background) shadow-(--shadow) rounded-2xl ${className ? className : ''} `}
         >
